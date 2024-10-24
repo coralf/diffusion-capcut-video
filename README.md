@@ -15,7 +15,7 @@
 ## 如何启动
 ### 1、安装nvm 
 安装地址：https://github.com/nvm-sh/nvm  
-![在 .zshrc 文件中配置nvm自动切换版本](https://github.com/nvm-sh/nvm?tab=readme-ov-file#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)  
+[在 .zshrc 文件中配置nvm自动切换版本](https://github.com/nvm-sh/nvm?tab=readme-ov-file#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)  
    
 配置完成后不要忘记执行一下source命令  
 
