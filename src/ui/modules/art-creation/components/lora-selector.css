@@ -1,0 +1,30 @@
+
+.lora-model-item-selected {
+    outline: #1890ff 2px solid;
+}
+
+
+.lora-model-item-image {
+    object-fit: cover;
+    object-position: center center;
+}
+
+.lora-model-item {
+    cursor: pointer
+}
+
+
+.lora-model {
+    width: 600px;
+    height: 400px;
+    overflow-y: scroll
+}
+
+
+.lora-model-text {
+    padding: 0;
+    margin: 0;
+    width: 150px;
+    word-wrap: break-word;
+    word-spacing: normal;
+}
