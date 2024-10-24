@@ -1,0 +1,20 @@
+.operation-layout {
+  display: flex;
+  /* align-items: center; */
+  /* flex: 1; */
+  gap: 8px;
+  /* justify-content: space-between; */
+}
+
+.table-layout {}
+
+
+.table-row-drag-handler {
+  touch-action: none;
+  cursor: move;
+  padding: 24px 0;
+}
+
+.table-row-drag-handler:active {
+  color: #1890ff;
+}
