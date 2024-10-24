@@ -1,8 +1,12 @@
 ## 介绍
 
 1、界面  
+
 ![img1](images/img1.gif)
 
+2、生成的视频效果
+
+![video-effect](images/video-effect.gif)
 
 
 ## 环境要求
