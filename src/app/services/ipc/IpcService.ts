@@ -1,3 +1,4 @@
+import { KolorsService } from '../kolors/KolorsService';
 import { ipcMain, IpcMainInvokeEvent } from 'electron';
 
 import { AfterConstruct, Autowired, Bean } from '../../../common/ioc-manager';
@@ -9,8 +10,6 @@ import { StableDiffusionService } from '../stable-diffusion/StableDiffusionServi
 
 @Bean
 export class IpcService {
-
-
     @Autowired
     private stableDiffusionService!: StableDiffusionService;
     @Autowired
@@ -19,6 +18,9 @@ export class IpcService {
     private settingService!: SettingService;
     @Autowired
     private jianYingService!: JianYingService;
+
+    @Autowired
+    private kolorsService!: KolorsService;
 
     @AfterConstruct
     public initialize() {
@@ -39,15 +41,13 @@ export class IpcService {
         return this.metaSchemaService.getMetaSchema();
     };
 
-
     public exportJianYingProjectWithMedia = (options: any) => {
         return this.jianYingService.exportJianYingProjectWithMedia(options);
     };
 
     public getTextToImageProgress = () => {
         return this.stableDiffusionService.getTextToImageProgress();
-    }
-
+    };
 
     public textToImage = (options: any) => {
         return this.stableDiffusionService.textToImage(options);
@@ -77,16 +77,26 @@ export class IpcService {
         return this.stableDiffusionService.getLoraModelList();
     };
 
-
     public selectFolder = () => {
         return this.settingService.selectFolder();
-    }
+    };
 
     public getGlobalSetting = () => {
         return this.settingService.getGlobalSetting();
-    }
+    };
+
     public updateGlobalSetting = (options: any) => {
         return this.settingService.updateGlobalSetting(options);
     };
 
+    public kolorsTextToImage = (options: any) => {
+        return this.kolorsService.textToImage(options);
+    };
+
+    public kolorsUpscale = (options: any) => {
+        return this.kolorsService.upscale(options);
+    };
+    public kolorsUpscaleBase64Image = (options: any) => {
+        return this.kolorsService.upscaleBase64Image(options);
+    };
 }

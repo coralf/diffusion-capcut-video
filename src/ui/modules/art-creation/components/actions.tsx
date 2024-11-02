@@ -29,14 +29,14 @@ export const useBatchTextToImage = (api: useAppProps['notification']) => {
             .finally(() => {
                 api.destroy(progressKey);
             });
-        api.info({
-            key: progressKey,
-            message: `批量生成图片中`,
-            description: <ProgressFormat />,
-            placement: 'topRight',
-            closeIcon: false,
-            duration: null
-        });
+        // api.info({
+        //     key: progressKey,
+        //     message: `批量生成图片中`,
+        //     description: <ProgressFormat />,
+        //     placement: 'topRight',
+        //     closeIcon: false,
+        //     duration: null
+        // });
     };
 
     return handleBatchImage;
@@ -82,7 +82,7 @@ export const Actions = observer(() => {
             <Button onClick={controller.copyText}>复制配音文案</Button>
         </Tooltip>
         <Button onClick={batchTextToImage}>{contextHolder}批量生图</Button>
-        <Button onClick={controller.batchHighImage}>批量2k画质</Button>
+        {/* <Button onClick={controller.batchHighImage}>批量2k画质</Button> */}
         <ExportJianyingProject />
         <Button type={'primary'} onClick={handleSave}>保存</Button>
     </Space>;

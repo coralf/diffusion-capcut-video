@@ -41,3 +41,13 @@ export const deepMerge = (srcValue: any, value: any) => {
         return target;
     });
 };
+
+
+export const getRandomInteger = (min: number, max: number) => {
+    // 确保 min 和 max 是整数
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    // 生成随机整数
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+

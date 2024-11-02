@@ -44,21 +44,21 @@ export const getTableColumnsConfig = () => {
             editing: true,
             inputType: InputType.TextArea
         },
-        {
-            title: '反向提示词',
-            dataIndex: 'negativePrompts',
-            width: 200,
-            editing: true,
-            inputType: InputType.TextArea
-        },
-        {
-            title: '风格（Lora）',
-            dataIndex: 'loras',
-            width: 80,
-            editing: true,
-            inputType: InputType.LoraSelect,
-            align: 'center',
-        },
+        // {
+        //     title: '反向提示词',
+        //     dataIndex: 'negativePrompts',
+        //     width: 200,
+        //     editing: true,
+        //     inputType: InputType.TextArea
+        // },
+        // {
+        //     title: '风格（Lora）',
+        //     dataIndex: 'loras',
+        //     width: 80,
+        //     editing: true,
+        //     inputType: InputType.LoraSelect,
+        //     align: 'center',
+        // },
         {
             title: '画面',
             dataIndex: 'image',

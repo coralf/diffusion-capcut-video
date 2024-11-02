@@ -34,7 +34,7 @@ export const SettingMain = observer(() => {
                 </Form.Item>
             </Form>
         </Card>
-        <Card title="Stable Diffusion" bordered={false}>
+{/*        <Card title="Stable Diffusion" bordered={false}>
             <Form
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 12 }}
@@ -45,6 +45,20 @@ export const SettingMain = observer(() => {
                     <Input value={controller.globalSetting?.stableDiffusionBaseUrl} placeholder="127.0.0.1:7860"
                         onBlur={handleBlur}
                         onChange={v => handleChange(v, 'stableDiffusionBaseUrl')} />
+                </Form.Item>
+            </Form>
+        </Card>*/}
+        <Card title="Kolors" bordered={false}>
+            <Form
+                labelCol={{ span: 8 }}
+                wrapperCol={{ span: 12 }}
+            >
+                <Form.Item label="云端（本地）服务地址"
+                    required
+                    rules={[{ required: true, message: '请输入 Kolors api 地址' }]}>
+                    <Input value={controller.globalSetting?.kolorsBaseUrl} placeholder="127.0.0.1:7860"
+                        onBlur={handleBlur}
+                        onChange={v => handleChange(v, 'kolorsBaseUrl')} />
                 </Form.Item>
             </Form>
         </Card>
