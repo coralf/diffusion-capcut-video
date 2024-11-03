@@ -30,11 +30,11 @@ export class InitialService {
         try {
             this.showLoading(true);
             await this.initMetaSchema();
-            await this.initSdModel();
-            await this.initLoraModel();
+            // await this.initSdModel();
+            // await this.initLoraModel();
         } catch (e) {
             console.error(e);
-            this.antApi.message.error('stable diffusion webui 连接失败，请检查配置', 5);
+            // this.antApi.message.error('stable diffusion webui 连接失败，请检查配置', 5);
         } finally {
             this.showLoading(false);
         }

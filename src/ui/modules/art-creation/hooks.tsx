@@ -60,6 +60,14 @@ export const getTableColumnsConfig = () => {
         //     align: 'center',
         // },
         {
+            title: '随机种子',
+            dataIndex: 'randomSeed',
+            width: 50,
+            editing: true,
+            inputType: InputType.InputNumber,
+            align: 'center',
+        },
+        {
             title: '画面',
             dataIndex: 'image',
             width: 100,
