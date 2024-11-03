@@ -10,7 +10,7 @@ export const ArtCreationMain = observer(() => {
 
 
     return <Flex vertical gap={'large'}>
-        <GlobalSetting />
+        {/* <GlobalSetting /> */}
         <Actions />
         <ArtCreationTable />
         <RowControl />
