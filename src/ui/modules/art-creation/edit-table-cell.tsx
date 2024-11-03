@@ -1,4 +1,4 @@
-import { Flex, Image, Input, Select, Spin } from 'antd';
+import { Flex, Image, Input, Select, Spin, InputNumber } from 'antd';
 import { observer } from 'mobx-react';
 import React from 'react';
 
@@ -6,6 +6,7 @@ import { MultiGridSelect } from '../../components/multi-grid-select';
 import { IEditTableDataItem } from './art-creation-store';
 import { LoraSelectorModel } from './components/lora-selector';
 import { useArtCreationController } from './hooks';
+import { DEFAULT_RANDOM_SEED } from '../../../common/constants';
 
 export const enum InputType {
     TextArea = 'textArea',
@@ -14,7 +15,9 @@ export const enum InputType {
     LoraSelect = 'loraSelect',
     MultiGridSelect = 'multiGridSelect',
     TagSelect = 'tagSelect',
+    InputNumber = 'inputNumber',
 }
+
 
 export interface EditableCellProps {
     editing: boolean;
@@ -47,6 +50,11 @@ const renderCellItem = (options: EditableCellProps) => {
         [InputType.Input]: () => {
             return <Input value={options.value || ''}
                 onChange={(v) => options.onCellValueChange(v.target.value || '')}
+            />;
+        },
+        [InputType.InputNumber]: () => {
+            return <InputNumber min={1} max={1000000} value={options.value}
+                onChange={(value) => options.onCellValueChange(value)}
             />;
         },
         [InputType.Img]: () => {

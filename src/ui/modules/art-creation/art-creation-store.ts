@@ -11,9 +11,7 @@ export interface ISdModel {
     value: string;
 }
 
-export interface ILoraModel {
-
-}
+export interface ILoraModel {}
 
 export interface IImage {
     loading?: boolean;
@@ -21,7 +19,6 @@ export interface IImage {
     path?: string;
     // 是否已经是2k高清图片
     isHrImage?: boolean;
-
 }
 
 export interface IMultiGridSelect extends IMultiGridSelectValue {
@@ -57,15 +54,15 @@ export interface IEditTableDataItem {
     sdGenImageData?: any;
     // 反向提示词
     negativePrompts?: string;
-    //
+    // lora
     loras?: ILora[];
-    //
+    // 随机种子
+    randomSeed: number;
 }
-
 
 export enum EAiPaintingEngine {
     SD = 'sd',
-    MJ = 'mj'
+    MJ = 'mj',
 }
 
 export interface IDefinePrompt {
@@ -73,7 +70,6 @@ export interface IDefinePrompt {
     value: string;
     prompts: string;
 }
-
 
 export interface IStore {
     // 页面loading组件
@@ -94,7 +90,6 @@ export interface IStore {
 
 @Bean
 export class ArtCreationStore {
-
     private store!: IStore;
 
     public constructor() {
@@ -111,7 +106,7 @@ export class ArtCreationStore {
             sdModelList: [],
             loraModelList: [],
             aiPaintingEngine: EAiPaintingEngine.MJ,
-            editTableDataSource: []
+            editTableDataSource: [],
         };
     }
 
@@ -119,13 +114,8 @@ export class ArtCreationStore {
         return this.store;
     }
 
-
     public setStore(partialStore: Partial<IStore>) {
         this.store = deepMerge(this.store, partialStore);
         // console.log('===>nextStore', toJSON(this.store));
     }
-
-
 }
-
-
